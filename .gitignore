@@ -1,0 +1,23 @@
+# Executables
+*.out
+*.o
+a.out
+
+# PDFs
+*.pdf
+
+# Text files
+*.txt
+
+# Object files
+*.a
+*.so
+
+# Editor files
+*~
+*.swp
+*.swo
+.DS_Store
+
+# Debug files
+*.dSYM/

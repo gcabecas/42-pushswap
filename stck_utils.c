@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_utils.c                                       :+:      :+:    :+:   */
+/*   stck_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:58:23 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/09 11:45:57 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/09 15:28:59 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ t_stck	*stacklast(t_stck *stck)
 	t_stck	*tmp;
 
 	tmp = stck;
-
 	if (!stck)
 		return (NULL);
 	while (tmp->nxt)
@@ -48,9 +47,9 @@ t_stck	*stacknew(int nbr)
 
 	stck = malloc(sizeof(t_stck));
 	if (!stck)
-		return (NULL);
+		error_exit();
 	stck->nbr = nbr;
 	stck->nxt = NULL;
+	stck->prv = NULL;
 	return (stck);
 }
-
