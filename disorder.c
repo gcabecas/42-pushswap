@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:10:11 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/09 15:27:56 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/09 15:38:36 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static int	count_mistakes(t_stack *stack, int size)
 	return (mistakes);
 }
 
-double	compute_disorder(t_stack *stack)
+float	compute_disorder(t_stack *stack)
 {
 	int		size;
 	int		mistakes;
@@ -77,5 +77,5 @@ double	compute_disorder(t_stack *stack)
 		return (0.0);
 	mistakes = count_mistakes(stack, size);
 	total_pairs = (size * (size - 1)) / 2;
-	return ((double)mistakes / (double)total_pairs);
+	return ((float)mistakes / (float)total_pairs);
 }
