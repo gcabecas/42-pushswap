@@ -6,11 +6,34 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:31:50 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/10 10:55:23 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 15:23:57 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
+
+void	init_pushswap(t_pushswap *ps)
+{
+	ps->stack_a.head = NULL;
+	ps->stack_a.tail = NULL;
+	ps->stack_b.head = NULL;
+	ps->stack_b.tail = NULL;
+	ps->stats.total_ops = 0;
+	ps->stats.sa_count = 0;
+	ps->stats.sb_count = 0;
+	ps->stats.ss_count = 0;
+	ps->stats.pa_count = 0;
+	ps->stats.pb_count = 0;
+	ps->stats.ra_count = 0;
+	ps->stats.rb_count = 0;
+	ps->stats.rr_count = 0;
+	ps->stats.rra_count = 0;
+	ps->stats.rrb_count = 0;
+	ps->stats.rrr_count = 0;
+	ps->disorder = 0.0;
+	ps->bench_mode = 0;
+	ps->strategy = 3;
+}
 
 static void	add_to_stack(t_stack *stack, t_stck *tmp, int first)
 {

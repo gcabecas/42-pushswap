@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:05:40 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/09 15:13:58 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 15:32:49 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,30 @@ static void	swap(t_stack *stack)
 	stack->head->nxt->nbr = tmp;
 }
 
-void	sa(t_stack *stack_a)
+void	sa(t_pushswap *ps)
 {
-	swap(stack_a);
-	printf("sa\n");
+	swap(&ps->stack_a);
+	ps->stats.sa_count++;
+	ps->stats.total_ops++;
+	if (!ps->bench_mode)
+		printf("sa\n");
 }
 
-void	sb(t_stack *stack_b)
+void	sb(t_pushswap *ps)
 {
-	swap(stack_b);
-	printf("sb\n");
+	swap(&ps->stack_b);
+	ps->stats.sb_count++;
+	ps->stats.total_ops++;
+	if (!ps->bench_mode)
+		printf("sb\n");
 }
 
-void	ss(t_stack *stack_a, t_stack *stack_b)
+void	ss(t_pushswap *ps)
 {
-	swap(stack_a);
-	swap(stack_b);
-	printf("ss\n");
+	swap(&ps->stack_a);
+	swap(&ps->stack_b);
+	ps->stats.ss_count++;
+	ps->stats.total_ops++;
+	if (!ps->bench_mode)
+		printf("ss\n");
 }

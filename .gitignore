@@ -2,6 +2,10 @@
 *.out
 *.o
 a.out
+push_swap
+
+# Build directories
+.obj/
 
 # PDFs
 *.pdf

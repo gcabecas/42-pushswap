@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:02:07 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/10 11:55:40 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 15:32:49 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,20 @@ static void	push(t_stack *src, t_stack *dst)
 	dst->head = tmp;
 }
 
-void	pa(t_stack *stack_a, t_stack *stack_b)
+void	pa(t_pushswap *ps)
 {
-	push(stack_b, stack_a);
-	printf("pa\n");
+	push(&ps->stack_b, &ps->stack_a);
+	ps->stats.pa_count++;
+	ps->stats.total_ops++;
+	if (!ps->bench_mode)
+		printf("pa\n");
 }
 
-void	pb(t_stack *stack_a, t_stack *stack_b)
+void	pb(t_pushswap *ps)
 {
-	push(stack_a, stack_b);
-	printf("pb\n");
+	push(&ps->stack_a, &ps->stack_b);
+	ps->stats.pb_count++;
+	ps->stats.total_ops++;
+	if (!ps->bench_mode)
+		printf("pb\n");
 }

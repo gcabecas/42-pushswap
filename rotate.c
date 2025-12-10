@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:05:03 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/09 15:13:46 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 15:32:49 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,30 @@ static void	rotate(t_stack *stack)
 	stack->tail = first;
 }
 
-void	ra(t_stack *stack_a)
+void	ra(t_pushswap *ps)
 {
-	rotate(stack_a);
-	printf("ra\n");
+	rotate(&ps->stack_a);
+	ps->stats.ra_count++;
+	ps->stats.total_ops++;
+	if (!ps->bench_mode)
+		printf("ra\n");
 }
 
-void	rb(t_stack *stack_b)
+void	rb(t_pushswap *ps)
 {
-	rotate(stack_b);
-	printf("rb\n");
+	rotate(&ps->stack_b);
+	ps->stats.rb_count++;
+	ps->stats.total_ops++;
+	if (!ps->bench_mode)
+		printf("rb\n");
 }
 
-void	rr(t_stack *stack_a, t_stack *stack_b)
+void	rr(t_pushswap *ps)
 {
-	rotate(stack_a);
-	rotate(stack_b);
-	printf("rr\n");
+	rotate(&ps->stack_a);
+	rotate(&ps->stack_b);
+	ps->stats.rr_count++;
+	ps->stats.total_ops++;
+	if (!ps->bench_mode)
+		printf("rr\n");
 }

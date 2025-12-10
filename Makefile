@@ -1,0 +1,34 @@
+NAME = push_swap
+
+SRC = main.c init.c error.c utils.c disorder.c stck_utils.c solver_utils.c \
+	swap.c push.c rotate.c reverse_rotate.c simple.c print_test.c
+
+OBJDIR = .obj
+OBJ = $(SRC:%.c=$(OBJDIR)/%.o)
+DEP = $(OBJ:%.o=%.d)
+
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -I ./ -MMD -MP
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+$(OBJDIR)/%.o: %.c | $(OBJDIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR):
+	mkdir $(OBJDIR)
+
+clean:
+	rm -rf $(OBJDIR)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
+
+-include $(DEP)
