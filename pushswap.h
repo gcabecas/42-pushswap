@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:47:43 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/09 15:38:36 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 11:36:17 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 # include <stdio.h>		//remplacer par ft_printf
 
 typedef struct s_stck
@@ -28,6 +29,8 @@ typedef struct s_stack
 {
 	t_stck	*head;
 	t_stck	*tail;
+	int		method;
+	int		bench;
 }	t_stack;
 
 void	init(t_stack *stack, int argc, char **argv);
@@ -50,5 +53,6 @@ void	rra(t_stack *stack_a);
 void	rrb(t_stack *stack_b);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
 float	compute_disorder(t_stack *stack);
+void	simple_solver(t_stack *stack_a, t_stack *stack_b);
 
 #endif

@@ -6,12 +6,11 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:53:21 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/09 15:19:37 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 10:17:15 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-#include <limits.h>
 
 int	ft_atoi(char *str)
 {

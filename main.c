@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:43:47 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/09 23:29:28 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 12:12:02 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,14 @@ int	main(int argc, char **argv)
 		printf("%i\n", tmp->nbr);
 		tmp = tmp->nxt;
 	}
-	(void)stack_b;
+	printf("\n");
+	simple_solver(&stack_a, &stack_b);
+	printf("\n");
+	tmp = stack_a.head;
+	while (tmp)
+	{
+		printf("%i\n", tmp->nbr);
+		tmp = tmp->nxt;
+	}
 	return (0);
 }
