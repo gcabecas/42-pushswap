@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:47:43 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/10 11:36:17 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 14:57:27 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ void	rrb(t_stack *stack_b);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
 float	compute_disorder(t_stack *stack);
 void	simple_solver(t_stack *stack_a, t_stack *stack_b);
+int		verif(t_stack *stack_a, t_stack *stack_b);
 
 #endif
