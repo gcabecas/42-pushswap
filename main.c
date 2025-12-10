@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:43:47 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/10 12:52:01 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 14:59:54 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	// 	tmp = tmp->nxt;
 	// }
 	printf("\n");
-	simple_solver(&stack_a, &stack_b);
+	// simple_solver(&stack_a, &stack_b);
 	printf("\n");
 	// tmp = stack_a.head;
 	// while (tmp)
