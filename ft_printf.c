@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 08:34:54 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/15 11:55:37 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/15 11:58:10 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,24 +29,11 @@ size_t	ft_putchar(char c)
 	return (1);
 }
 
-static size_t	ft_putnbr_rec(long nb)
-{
-	char	c;
-	size_t	len;
-
-	if (nb >= 10)
-		len = ft_putnbr_rec(nb / 10);
-	else
-		len = 0;
-	c = (nb % 10) + '0';
-	write(1, &c, 1);
-	return (len + 1);
-}
-
 size_t	ft_putnbr(int n)
 {
 	long	nb;
 	size_t	len;
+	char	c;
 
 	nb = n;
 	len = 0;
@@ -56,7 +43,11 @@ size_t	ft_putnbr(int n)
 		len++;
 		nb = -nb;
 	}
-	return (len + ft_putnbr_rec(nb));
+	if (nb >= 10)
+		len += ft_putnbr(nb / 10);
+	c = (nb % 10) + '0';
+	write(1, &c, 1);
+	return (len + 1);
 }
 
 size_t	choose_print(const char *str, size_t i, va_list *ap)
