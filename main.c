@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:43:47 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/10 15:38:33 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/15 11:29:50 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int	main(int argc, char **argv)
 	ps.disorder = (int)(compute_disorder(&ps.stack_a) * 100);
 
 	ps.bench_mode = 1;
-	printf("=== BEFORE SORTING ===");
+	ft_printf("=== BEFORE SORTING ===");
 	print_stacks(&ps);
 
 	simple_solver(&ps);
 
-	printf("=== AFTER SORTING ===");
+	ft_printf("=== AFTER SORTING ===");
 	print_stacks(&ps);
 	print_stats(&ps);
 	return (0);

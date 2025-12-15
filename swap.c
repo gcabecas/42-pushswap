@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:05:40 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/10 15:32:49 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/15 11:28:57 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	sa(t_pushswap *ps)
 	ps->stats.sa_count++;
 	ps->stats.total_ops++;
 	if (!ps->bench_mode)
-		printf("sa\n");
+		ft_printf("sa\n");
 }
 
 void	sb(t_pushswap *ps)
@@ -39,7 +39,7 @@ void	sb(t_pushswap *ps)
 	ps->stats.sb_count++;
 	ps->stats.total_ops++;
 	if (!ps->bench_mode)
-		printf("sb\n");
+		ft_printf("sb\n");
 }
 
 void	ss(t_pushswap *ps)
@@ -49,5 +49,5 @@ void	ss(t_pushswap *ps)
 	ps->stats.ss_count++;
 	ps->stats.total_ops++;
 	if (!ps->bench_mode)
-		printf("ss\n");
+		ft_printf("ss\n");
 }

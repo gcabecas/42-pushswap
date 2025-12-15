@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:53:21 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/10 10:17:15 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/15 11:53:43 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,14 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	return ((int)(nbr * sign));
+}
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
