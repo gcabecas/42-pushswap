@@ -6,13 +6,13 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:58:23 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/09 15:28:59 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 18:24:53 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-t_stck	*stacklast(t_stck *stck)
+static t_stck	*stacklast(t_stck *stck)
 {
 	t_stck	*tmp;
 
@@ -52,4 +52,19 @@ t_stck	*stacknew(int nbr)
 	stck->nxt = NULL;
 	stck->prv = NULL;
 	return (stck);
+}
+
+size_t	stack_size(t_stack *s)
+{
+	size_t	n;
+	t_stck	*tmp;
+
+	n = 0;
+	tmp = s->head;
+	while (tmp)
+	{
+		n++;
+		tmp = tmp->nxt;
+	}
+	return (n);
 }

@@ -6,13 +6,13 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 08:34:54 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/15 11:58:10 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 14:09:34 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-size_t	ft_putstr(char *str)
+static size_t	ft_putstr(char *str)
 {
 	size_t	len;
 
@@ -23,13 +23,13 @@ size_t	ft_putstr(char *str)
 	return (len);
 }
 
-size_t	ft_putchar(char c)
+static size_t	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-size_t	ft_putnbr(int n)
+static size_t	ft_putnbr(int n)
 {
 	long	nb;
 	size_t	len;
@@ -50,7 +50,7 @@ size_t	ft_putnbr(int n)
 	return (len + 1);
 }
 
-size_t	choose_print(const char *str, size_t i, va_list *ap)
+static size_t	choose_print(const char *str, size_t i, va_list *ap)
 {
 	size_t	len;
 

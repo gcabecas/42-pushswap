@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:47:43 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/15 11:54:13 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 19:15:36 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,13 @@ void	init_pushswap(t_pushswap *ps);
 void	init(t_stack *stack, int argc, char **argv);
 t_stck	*stacknew(int nbr);
 void	stackadd_back(t_stck **stck, t_stck *new);
+size_t	stack_size(t_stack *s);
 int		ft_atoi(char *str);
 void	error_exit(void);
 int		is_valid_number(char *str);
 int		has_duplicate(t_stack *stack, int nbr);
 void	check_input(int argc, char **argv);
+void	parse_flags(t_pushswap *ps, int *argc, char **argv);
 void	sa(t_pushswap *ps);
 void	sb(t_pushswap *ps);
 void	ss(t_pushswap *ps);
@@ -79,9 +81,11 @@ void	rrb(t_pushswap *ps);
 void	rrr(t_pushswap *ps);
 float	compute_disorder(t_stack *stack);
 void	simple_solver(t_pushswap *ps);
+void	complex_solver(t_pushswap *ps);
 int		verif(t_stack *stack_a, t_stack *stack_b);
 int		ft_printf(const char *str, ...);
 size_t	ft_strlen(const char *s);
+int		ft_strcmp(const char *s1, const char *s2);
 // test
 void	print_stacks(t_pushswap *ps);
 void	print_stats(t_pushswap *ps);
