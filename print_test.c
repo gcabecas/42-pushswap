@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 15:30:00 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/15 11:28:22 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 19:36:50 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,27 @@ void	print_stacks(t_pushswap *ps)
 	while (tmp)
 	{
 		ft_printf("%d ", tmp->nbr);
+		tmp = tmp->nxt;
+	}
+	ft_printf("\n\n");
+}
+
+void	print_index(t_pushswap *ps)
+{
+	t_stck	*tmp;
+
+	ft_printf("\nStack A (index): ");
+	tmp = ps->stack_a.head;
+	while (tmp)
+	{
+		ft_printf("%d ", tmp->index);
+		tmp = tmp->nxt;
+	}
+	ft_printf("\nStack B (index): ");
+	tmp = ps->stack_b.head;
+	while (tmp)
+	{
+		ft_printf("%d ", tmp->index);
 		tmp = tmp->nxt;
 	}
 	ft_printf("\n\n");

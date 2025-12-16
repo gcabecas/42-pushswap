@@ -6,26 +6,11 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:10:11 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/09 15:38:36 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 19:58:44 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-
-static int	get_stack_size(t_stack *stack)
-{
-	int		size;
-	t_stck	*tmp;
-
-	size = 0;
-	tmp = stack->head;
-	while (tmp)
-	{
-		size++;
-		tmp = tmp->nxt;
-	}
-	return (size);
-}
 
 static int	get_element_at(t_stack *stack, int index)
 {
@@ -72,7 +57,7 @@ float	compute_disorder(t_stack *stack)
 	int		mistakes;
 	int		total_pairs;
 
-	size = get_stack_size(stack);
+	size = stack_size(stack);
 	if (size <= 1)
 		return (0.0);
 	mistakes = count_mistakes(stack, size);
