@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:31:50 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/10 15:23:57 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 18:40:51 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	init_pushswap(t_pushswap *ps)
 	ps->stats.rra_count = 0;
 	ps->stats.rrb_count = 0;
 	ps->stats.rrr_count = 0;
-	ps->disorder = 0.0;
+	ps->disorder = 0;
 	ps->bench_mode = 0;
 	ps->strategy = 3;
 }
