@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:05:40 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/15 11:28:57 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 19:34:12 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ static void	swap(t_stack *stack)
 	tmp = stack->head->nbr;
 	stack->head->nbr = stack->head->nxt->nbr;
 	stack->head->nxt->nbr = tmp;
+	tmp = stack->head->index;
+	stack->head->index = stack->head->nxt->index;
+	stack->head->nxt->index = tmp;
 }
 
 void	sa(t_pushswap *ps)

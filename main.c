@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:43:47 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/16 19:00:22 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 19:59:47 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,7 @@ int	main(int argc, char **argv)
 	init_stacks(&ps, argc, argv);
 	execute_solver(&ps);
 	display_result(&ps);
+	free_stack(&ps.stack_a);
+	free_stack(&ps.stack_b);
 	return (0);
 }

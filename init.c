@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:31:50 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/16 18:40:51 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 20:15:11 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,22 @@ void	init(t_stack *stack, int argc, char **argv)
 	int		i;
 	int		nbr;
 	t_stck	*tmp;
+	t_pushswap	ps_temp;
 
 	i = 1;
 	stack->head = NULL;
 	stack->tail = NULL;
+	ps_temp.stack_a = *stack;
+	ps_temp.stack_b.head = NULL;
+	ps_temp.stack_b.tail = NULL;
 	while (i < argc)
 	{
 		nbr = ft_atoi(argv[i]);
 		if (stack->head && has_duplicate(stack, nbr))
-			error_exit();
+		{
+			ps_temp.stack_a = *stack;
+			error_exit_free(&ps_temp);
+		}
 		tmp = stacknew(nbr);
 		add_to_stack(stack, tmp, (i == 1));
 		i++;

@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:30:00 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/09 15:19:20 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 20:15:11 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,19 @@
 
 void	error_exit(void)
 {
+	write(2, "Error\n", 6);
+	exit(1);
+}
+
+void	error_exit_free(t_pushswap *ps)
+{
+	if (ps)
+	{
+		if (ps->stack_a.head)
+			free_stack(&ps->stack_a);
+		if (ps->stack_b.head)
+			free_stack(&ps->stack_b);
+	}
 	write(2, "Error\n", 6);
 	exit(1);
 }
