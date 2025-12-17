@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:47:43 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/16 20:15:45 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/17 13:17:31 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,11 +89,11 @@ int		verif(t_stack *stack_a, t_stack *stack_b);
 int		ft_printf(const char *str, ...);
 size_t	ft_strlen(const char *s);
 int		ft_strcmp(const char *s1, const char *s2);
-// test
 void	print_stacks(t_pushswap *ps);
 void	print_index(t_pushswap *ps);
 void	print_stats(t_pushswap *ps);
-
 int		assign_index(t_pushswap *ps);
+
+void	medium_solver(t_pushswap *ps);
 
 #endif

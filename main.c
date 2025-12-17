@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:43:47 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/16 19:59:47 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/17 13:18:07 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	adaptive_solver(t_pushswap *ps)
 	if (ps->disorder < 20)
 		simple_solver(ps);
 	else if (ps->disorder < 50)
-		ft_printf("mid");
+		medium_solver(ps);
 	else
 		complex_solver(ps);
 }
@@ -27,7 +27,7 @@ static void	execute_solver(t_pushswap *ps)
 	if (ps->strategy == 0)
 		simple_solver(ps);
 	else if (ps->strategy == 1)
-		ft_printf("mid");
+		medium_solver(ps);
 	else if (ps->strategy == 2)
 		complex_solver(ps);
 	else

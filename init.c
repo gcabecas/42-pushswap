@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:31:50 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/16 20:15:11 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/17 13:11:03 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ static void	add_to_stack(t_stack *stack, t_stck *tmp, int first)
 
 void	init(t_stack *stack, int argc, char **argv)
 {
-	int		i;
-	int		nbr;
-	t_stck	*tmp;
+	int			i;
+	int			nbr;
+	t_stck		*tmp;
 	t_pushswap	ps_temp;
 
 	i = 1;

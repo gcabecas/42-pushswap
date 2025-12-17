@@ -6,6 +6,7 @@ push_swap
 
 # Build directories
 .obj/
+push_swap_visualizer\
 
 # PDFs
 *.pdf
