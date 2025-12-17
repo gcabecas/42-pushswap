@@ -1,7 +1,7 @@
 NAME = push_swap
 
 SRC = main.c init.c error.c utils.c disorder.c stck_utils.c solver_utils.c \
-	swap.c push.c rotate.c reverse_rotate.c simple.c print_test.c ft_printf.c
+	swap.c push.c rotate.c reverse_rotate.c simple.c print_test.c ft_printf.c medium.c
 
 OBJDIR = .obj
 OBJ = $(SRC:%.c=$(OBJDIR)/%.o)
@@ -13,7 +13,7 @@ CFLAGS = -Wall -Wextra -Werror -I ./ -MMD -MP
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) -lm
 
 $(OBJDIR)/%.o: %.c | $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@

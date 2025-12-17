@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: ndi-tull <ndi-tull@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:43:47 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/15 11:59:01 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 13:42:57 by ndi-tull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	ps.bench_mode = 1;
 	ft_printf("=== BEFORE SORTING ===");
 	print_stacks(&ps);
-	simple_solver(&ps);
+	chunk_solver(&ps);
 	ft_printf("=== AFTER SORTING ===");
 	print_stacks(&ps);
 	print_stats(&ps);
