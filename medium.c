@@ -6,28 +6,37 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:15:34 by ndi-tull          #+#    #+#             */
-/*   Updated: 2025/12/17 13:16:45 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/17 13:30:37 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-// Compte le nombre d’éléments dans une stack.
+static int	ft_sqrt(int n)
+{
+	int	x;
+	int	prev;
+
+	if (n <= 0)
+		return (0);
+	if (n == 1)
+		return (1);
+	x = n / 2;
+	prev = 0;
+	while (x != prev)
+	{
+		prev = x;
+		x = (x + n / x) / 2;
+	}
+	return (x);
+}
+
+// Compte le nombre d'éléments dans une stack.
 // Utilisé pour :
 // déterminer la taille des chunks
 // choisir le sens des rotations
 // Retourne la plus petite valeur présente dans la stack.
 // Sert à définir le début de l’intervalle global.
-
-int squareRoot(double n) {
-   double i, precision = 0.01;
-
-   for(i = 1; i*i <=n; ++i);           //Integer part
-
-   for(--i; i*i < n; i += precision);  //Fractional part
-
-   return ((int)i);
-}
 
 static int	find_min(t_stack *stack)
 {
@@ -165,7 +174,7 @@ void	medium_solver(t_pushswap *ps)
 		return (simple_solver(ps));
 	min = find_min(&ps->stack_a);
 	max = find_max(&ps->stack_a);
-	chunk_size = (max - min) / squareRoot(n) + 1;
+	chunk_size = (max - min) / ft_sqrt(n) + 1;
 	cur_min = min;
 	cur_max = min + chunk_size;
 	while (ps->stack_a.head)

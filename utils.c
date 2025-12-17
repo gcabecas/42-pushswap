@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:53:21 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/17 11:08:47 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/17 13:32:39 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_atoi(char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		nbr = nbr * 10 + (str[i] - '0');
-		if (nbr * sign > INT_MAX || nbr * sign < INT_MIN)
+		if (nbr * sign > 2147483647 || nbr * sign < -2147483648)
 			error_exit();
 		i++;
 	}

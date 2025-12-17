@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:47:43 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/17 13:17:31 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/17 13:33:06 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <limits.h>
 # include <stdarg.h>
 
 typedef struct s_stck
