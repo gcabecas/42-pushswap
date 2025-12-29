@@ -182,8 +182,6 @@ Target operations for passing evaluation:
 ### AI Usage
 AI was used in the following parts of the project:
 - **README.md creation:** Assistance with structure and formatting of this documentation
-- **Algorithm research:** Understanding radix sort bit manipulation techniques
-- **Complexity analysis:** Verification of Big-O calculations and operation counting
 
 No AI-generated code was directly used in the implementation. All algorithms were coded and understood by the team members.
 
