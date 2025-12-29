@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:47:43 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/29 15:46:04 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/29 16:53:45 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,6 @@ void	ft_putstr_fd(char *str, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	print_operation_counts(t_pushswap *ps);
 int		assign_index(t_pushswap *ps);
-
 void	medium_solver(t_pushswap *ps);
 int		find_min(t_stack *stack);
 int		find_max(t_stack *stack);
