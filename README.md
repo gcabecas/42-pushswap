@@ -176,11 +176,8 @@ Target operations for passing evaluation:
 ## Resources
 
 ### Documentation & References
-- [Big-O Complexity Cheat Sheet](https://www.bigocheatsheet.com/)
-- [Sorting Algorithms Visualized](https://www.toptal.com/developers/sorting-algorithms)
-- Donald Knuth - "The Art of Computer Programming, Vol. 3: Sorting and Searching"
-- [Radix Sort Explained](https://en.wikipedia.org/wiki/Radix_sort)
 - [Push_swap Visualizer](https://github.com/o-reo/push_swap_visualizer)
+- [Push_swap Tutorial Video](https://www.youtube.com/watch?v=Y95a-8oNqps)
 
 ### AI Usage
 AI was used in the following parts of the project:
