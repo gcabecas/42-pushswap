@@ -177,7 +177,7 @@ Target operations for passing evaluation:
 
 ### Documentation & References
 - [Push_swap Visualizer](https://github.com/o-reo/push_swap_visualizer)
-- [Push_swap Tutorial Video](https://www.youtube.com/watch?v=Y95a-8oNqps)
+- [radix explanation](https://www.youtube.com/watch?v=Y95a-8oNqps)
 
 ### AI Usage
 AI was used in the following parts of the project:
