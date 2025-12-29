@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:15:34 by ndi-tull          #+#    #+#             */
-/*   Updated: 2025/12/17 13:30:37 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/29 15:32:10 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,60 +31,6 @@ static int	ft_sqrt(int n)
 	return (x);
 }
 
-// Compte le nombre d'éléments dans une stack.
-// Utilisé pour :
-// déterminer la taille des chunks
-// choisir le sens des rotations
-// Retourne la plus petite valeur présente dans la stack.
-// Sert à définir le début de l’intervalle global.
-
-static int	find_min(t_stack *stack)
-{
-	t_stck	*tmp;
-	int		min;
-
-	tmp = stack->head;
-	min = tmp->nbr;
-	while (tmp)
-	{
-		if (tmp->nbr < min)
-			min = tmp->nbr;
-		tmp = tmp->nxt;
-	}
-	return (min);
-}
-
-// Retourne la plus grande valeur présente dans la stack.
-// Sert à définir la fin de l’intervalle global.
-
-static int	find_max(t_stack *stack)
-{
-	t_stck	*tmp;
-	int		max;
-
-	tmp = stack->head;
-	max = tmp->nbr;
-	while (tmp)
-	{
-		if (tmp->nbr > max)
-			max = tmp->nbr;
-		tmp = tmp->nxt;
-	}
-	return (max);
-}
-
-// Vérifie si un nombre appartient à un chunk donné.
-
-static int	in_range(int nbr, int min, int max)
-{
-	return (nbr >= min && nbr <= max);
-}
-
-// Parcourt la stack A et pousse dans B tous les éléments
-// dont la valeur est comprise dans [min ; max].
-// Si le top de A appartient au chunk -> pb
-// Sinon -> ra pour aller chercher un autre élément
-
 static void	push_chunk(t_pushswap *ps, int min, int max)
 {
 	int	size;
@@ -94,17 +40,13 @@ static void	push_chunk(t_pushswap *ps, int min, int max)
 	i = 0;
 	while (i < size)
 	{
-		if (in_range(ps->stack_a.head->nbr, min, max))
+		if (ps->stack_a.head->nbr >= min && ps->stack_a.head->nbr <= max)
 			pb(ps);
 		else
 			ra(ps);
 		i++;
 	}
 }
-
-// Retourne la position (index) du plus grand élément
-// présent dans la stack B.
-// Utilisé pour déterminer s’il vaut mieux faire rb ou rrb.
 
 static int	find_max_pos(t_stack *stack)
 {
@@ -130,10 +72,6 @@ static int	find_max_pos(t_stack *stack)
 	return (max_pos);
 }
 
-// Remonte le plus grand élément de la stack B vers le haut,
-// en utilisant la rotation la moins coûteuse, puis le pousse
-// dans la stack A.
-
 static void	push_back_max(t_pushswap *ps)
 {
 	int	pos;
@@ -154,12 +92,6 @@ static void	push_back_max(t_pushswap *ps)
 	pa(ps);
 }
 
-// Algorithme de tri par chunks (complexité O(n√n)).
-// Étapes :
-// 1) Calculer min, max et la taille des chunks
-// 2) Pousser les éléments de A vers B par plages de valeurs
-// 3) Remonter B vers A en récupérant toujours le maximum
-
 void	medium_solver(t_pushswap *ps)
 {
 	int	min;
@@ -167,14 +99,12 @@ void	medium_solver(t_pushswap *ps)
 	int	chunk_size;
 	int	cur_min;
 	int	cur_max;
-	int	n;
 
-	n = stack_size(&ps->stack_a);
-	if (n <= 5)
+	if (stack_size(&ps->stack_a) <= 5)
 		return (simple_solver(ps));
 	min = find_min(&ps->stack_a);
 	max = find_max(&ps->stack_a);
-	chunk_size = (max - min) / ft_sqrt(n) + 1;
+	chunk_size = (max - min) / ft_sqrt(stack_size(&ps->stack_a)) + 1;
 	cur_min = min;
 	cur_max = min + chunk_size;
 	while (ps->stack_a.head)

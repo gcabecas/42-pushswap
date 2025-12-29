@@ -2,7 +2,7 @@ NAME = push_swap
 
 SRC = main.c init.c error.c utils.c disorder.c stck_utils.c solver_utils.c \
 	swap.c push.c rotate.c reverse_rotate.c simple.c complex.c complex_utils.c \
-	print_test.c flag.c ft_printf.c medium.c
+	stats.c stats_utils.c flag.c ft_printf.c medium.c medium_utils.c
 
 OBJDIR = .obj
 OBJ = $(SRC:%.c=$(OBJDIR)/%.o)

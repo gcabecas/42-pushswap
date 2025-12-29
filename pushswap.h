@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:47:43 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/17 13:33:06 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/29 15:46:04 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ typedef struct s_pushswap
 	t_stack	stack_a;
 	t_stack	stack_b;
 	t_stat	stats;
-	int		disorder;
+	float	disorder;
 	int		bench_mode;
 	int		strategy;
 }	t_pushswap;
@@ -88,11 +88,14 @@ int		verif(t_stack *stack_a, t_stack *stack_b);
 int		ft_printf(const char *str, ...);
 size_t	ft_strlen(const char *s);
 int		ft_strcmp(const char *s1, const char *s2);
-void	print_stacks(t_pushswap *ps);
-void	print_index(t_pushswap *ps);
 void	print_stats(t_pushswap *ps);
+void	ft_putstr_fd(char *str, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	print_operation_counts(t_pushswap *ps);
 int		assign_index(t_pushswap *ps);
 
 void	medium_solver(t_pushswap *ps);
+int		find_min(t_stack *stack);
+int		find_max(t_stack *stack);
 
 #endif

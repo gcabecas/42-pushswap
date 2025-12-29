@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:00:15 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/15 11:28:38 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/29 16:00:26 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ void	rra(t_pushswap *ps)
 	reverse_rotate(&ps->stack_a);
 	ps->stats.rra_count++;
 	ps->stats.total_ops++;
-	if (!ps->bench_mode)
-		ft_printf("rra\n");
+	ft_printf("rra\n");
 }
 
 void	rrb(t_pushswap *ps)
@@ -42,8 +41,7 @@ void	rrb(t_pushswap *ps)
 	reverse_rotate(&ps->stack_b);
 	ps->stats.rrb_count++;
 	ps->stats.total_ops++;
-	if (!ps->bench_mode)
-		ft_printf("rrb\n");
+	ft_printf("rrb\n");
 }
 
 void	rrr(t_pushswap *ps)
@@ -52,6 +50,5 @@ void	rrr(t_pushswap *ps)
 	reverse_rotate(&ps->stack_b);
 	ps->stats.rrr_count++;
 	ps->stats.total_ops++;
-	if (!ps->bench_mode)
-		ft_printf("rrr\n");
+	ft_printf("rrr\n");
 }

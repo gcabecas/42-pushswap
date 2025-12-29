@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:43:47 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/17 13:41:53 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/29 15:43:35 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	adaptive_solver(t_pushswap *ps)
 {
-	if (ps->disorder < 20)
+	if (ps->disorder < 0.2)
 		simple_solver(ps);
-	else if (ps->disorder < 50)
+	else if (ps->disorder < 0.5)
 		medium_solver(ps);
 	else
 		complex_solver(ps);
@@ -36,11 +36,6 @@ static void	execute_solver(t_pushswap *ps)
 
 static void	display_result(t_pushswap *ps)
 {
-	if (!ps->bench_mode)
-	{
-		ft_printf("=== AFTER SORTING ===\n");
-		print_stacks(ps);
-	}
 	if (ps->bench_mode)
 		print_stats(ps);
 }
@@ -51,12 +46,7 @@ static void	init_stacks(t_pushswap *ps, int argc, char **argv)
 	init(&ps->stack_a, argc, argv);
 	ps->stack_b.head = NULL;
 	ps->stack_b.tail = NULL;
-	ps->disorder = (int)(compute_disorder(&ps->stack_a) * 100);
-	if (!ps->bench_mode)
-	{
-		ft_printf("=== BEFORE SORTING ===\n");
-		print_stacks(ps);
-	}
+	ps->disorder = compute_disorder(&ps->stack_a);
 }
 
 int	main(int argc, char **argv)
@@ -64,11 +54,11 @@ int	main(int argc, char **argv)
 	t_pushswap	ps;
 
 	if (argc < 2)
-		return (1);
+		return (0);
 	init_pushswap(&ps);
 	parse_flags(&ps, &argc, argv);
 	if (argc < 2)
-		return (1);
+		return (0);
 	init_stacks(&ps, argc, argv);
 	execute_solver(&ps);
 	display_result(&ps);
