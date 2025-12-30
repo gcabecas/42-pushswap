@@ -178,6 +178,7 @@ Target operations for passing evaluation:
 ### Documentation & References
 - [Push_swap Visualizer](https://github.com/o-reo/push_swap_visualizer)
 - [radix explanation](https://www.youtube.com/watch?v=Y95a-8oNqps)
+- [Chunk Sort explanation](https://www.cs.upc.edu/~conrado/research/talks/dmd06.pdf)
 
 ### AI Usage
 AI was used in the following parts of the project:
@@ -218,19 +219,19 @@ No AI-generated code was directly used in the implementation. All algorithms wer
 
 ### gcabecas
 - Project architecture and structure
-- Simple algorithm (O(n²))
 - Complex algorithm (O(n log n))
 - Adaptive strategy selector
-- Disorder calculation
 - Parsing and error handling
 - Stack operations (push, swap, rotate)
 - Statistics and benchmark system
 - Main program flow
 
 ### ndi-tull
+- Simple algorithm (O(n²))
 - Medium algorithm (O(n√n))
 - Chunk-based sorting implementation
 - Cost calculation for element positioning
+- Disorder calculation
 
 Both contributors participated in:
 - Algorithm design discussions

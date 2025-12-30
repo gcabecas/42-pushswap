@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: ndi-tull <ndi-tull@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:15:34 by ndi-tull          #+#    #+#             */
-/*   Updated: 2025/12/29 15:32:10 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/30 11:29:37 by ndi-tull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,6 @@ void	medium_solver(t_pushswap *ps)
 	int	cur_min;
 	int	cur_max;
 
-	if (stack_size(&ps->stack_a) <= 5)
-		return (simple_solver(ps));
 	min = find_min(&ps->stack_a);
 	max = find_max(&ps->stack_a);
 	chunk_size = (max - min) / ft_sqrt(stack_size(&ps->stack_a)) + 1;
