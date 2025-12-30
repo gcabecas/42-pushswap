@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: ndi-tull <ndi-tull@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:10:11 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/17 13:10:51 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/30 12:39:15 by ndi-tull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,38 +29,29 @@ static int	get_element_at(t_stack *stack, int index)
 	return (0);
 }
 
-static int	count_mistakes(t_stack *stack, int size)
+float	compute_disorder(t_stack *stack)
 {
-	int	mistakes;
-	int	i;
-	int	j;
+	float	mistakes;
+	float	total_pairs;
+	int		i;
+	int		j;
+	int		size;
 
-	mistakes = 0;
 	i = 0;
-	while (i < size - 1)
+	mistakes = 0;
+	total_pairs = 0;
+	size = stack_size(stack);
+	while (i <= size - 1)
 	{
 		j = i + 1;
-		while (j < size)
+		while (j <= size - 1)
 		{
 			if (get_element_at(stack, i) > get_element_at(stack, j))
 				mistakes++;
+			total_pairs++;
 			j++;
 		}
 		i++;
 	}
-	return (mistakes);
-}
-
-float	compute_disorder(t_stack *stack)
-{
-	int		size;
-	int		mistakes;
-	int		total_pairs;
-
-	size = stack_size(stack);
-	if (size <= 1)
-		return (0.0);
-	mistakes = count_mistakes(stack, size);
-	total_pairs = (size * (size - 1)) / 2;
-	return ((float)mistakes / (float)total_pairs);
+	return (mistakes / total_pairs);
 }

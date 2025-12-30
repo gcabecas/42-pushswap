@@ -6,7 +6,7 @@
 /*   By: ndi-tull <ndi-tull@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:15:34 by ndi-tull          #+#    #+#             */
-/*   Updated: 2025/12/30 11:29:37 by ndi-tull         ###   ########.fr       */
+/*   Updated: 2025/12/30 12:19:01 by ndi-tull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 static int	ft_sqrt(int n)
 {
-	int	x;
-	int	prev;
+	float	x;
+	float	y;
+	float	e;
 
-	if (n <= 0)
-		return (0);
-	if (n == 1)
-		return (1);
-	x = n / 2;
-	prev = 0;
-	while (x != prev)
+	x = n;
+	y = 1;
+	e = 0.01;
+	while (x - y > e)
 	{
-		prev = x;
-		x = (x + n / x) / 2;
+		x = (x + y) / 2;
+		y = n / x;
 	}
-	return (x);
+	return ((int)x);
 }
 
 static void	push_chunk(t_pushswap *ps, int min, int max)
