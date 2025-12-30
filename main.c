@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: ndi-tull <ndi-tull@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:43:47 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/29 15:43:35 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2025/12/30 11:44:57 by ndi-tull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	main(int argc, char **argv)
 	init_pushswap(&ps);
 	parse_flags(&ps, &argc, argv);
 	if (argc < 2)
-		return (0);
+		error_exit();
 	init_stacks(&ps, argc, argv);
 	execute_solver(&ps);
 	display_result(&ps);
