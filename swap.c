@@ -6,12 +6,11 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:05:40 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/29 16:00:26 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2026/01/01 15:28:52 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-#include <unistd.h>
 
 static void	swap(t_stack *stack)
 {

@@ -3,6 +3,7 @@
 *.o
 a.out
 push_swap
+checker_linux
 
 # Build directories
 .obj/
