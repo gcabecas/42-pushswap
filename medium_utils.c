@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 15:28:43 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/29 15:29:17 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2026/01/03 15:02:22 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,28 @@ int	find_max(t_stack *stack)
 		tmp = tmp->nxt;
 	}
 	return (max);
+}
+
+int	find_max_pos(t_stack *stack)
+{
+	t_stck	*tmp;
+	int		max;
+	int		pos;
+	int		max_pos;
+
+	tmp = stack->head;
+	max = tmp->nbr;
+	pos = 0;
+	max_pos = 0;
+	while (tmp)
+	{
+		if (tmp->nbr > max)
+		{
+			max = tmp->nbr;
+			max_pos = pos;
+		}
+		tmp = tmp->nxt;
+		pos++;
+	}
+	return (max_pos);
 }
