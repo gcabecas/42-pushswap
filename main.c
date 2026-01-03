@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ndi-tull <ndi-tull@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:43:47 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/30 11:44:57 by ndi-tull         ###   ########.fr       */
+/*   Updated: 2026/01/01 15:57:08 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ static void	init_stacks(t_pushswap *ps, int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	t_pushswap	ps;
+	char		**expanded_argv;
+	int			expanded_argc;
 
 	if (argc < 2)
 		return (0);
@@ -59,7 +61,10 @@ int	main(int argc, char **argv)
 	parse_flags(&ps, &argc, argv);
 	if (argc < 2)
 		error_exit();
-	init_stacks(&ps, argc, argv);
+	expanded_argv = expand_args(&argc, argv);
+	expanded_argc = argc;
+	init_stacks(&ps, expanded_argc, expanded_argv);
+	free_expanded_args(expanded_argv, expanded_argc);
 	execute_solver(&ps);
 	display_result(&ps);
 	free_stack(&ps.stack_a);

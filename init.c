@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:31:50 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/17 13:11:03 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2026/01/01 16:00:09 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	init(t_stack *stack, int argc, char **argv)
 		if (stack->head && has_duplicate(stack, nbr))
 		{
 			ps_temp.stack_a = *stack;
+			free_expanded_args(argv, argc);
 			error_exit_free(&ps_temp);
 		}
 		tmp = stacknew(nbr);

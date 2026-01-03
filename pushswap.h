@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:47:43 by gcabecas          #+#    #+#             */
-/*   Updated: 2025/12/29 16:53:45 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2026/01/01 15:57:10 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,12 @@ int		assign_index(t_pushswap *ps);
 void	medium_solver(t_pushswap *ps);
 int		find_min(t_stack *stack);
 int		find_max(t_stack *stack);
+char	**expand_args(int *argc, char **argv);
+void	free_expanded_args(char **args, int count);
+int		is_space(char c);
+int		count_words(char *str);
+char	*extract_word(char *str, int *index);
+char	**ft_split(char *str);
+int		contains_space(char *str);
 
 #endif
