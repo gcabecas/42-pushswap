@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 15:50:00 by gcabecas          #+#    #+#             */
-/*   Updated: 2026/01/03 12:28:30 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2026/01/03 12:33:52 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void	copy_string(char *dst, char *src)
 	dst[j] = '\0';
 }
 
-static int	expand_with_space(char **new_argv, char *arg, int k)
+static int	new_with_space(char **new_argv, char *arg, int k)
 {
 	char	**split;
 	int		j;
@@ -60,7 +60,7 @@ static int	expand_with_space(char **new_argv, char *arg, int k)
 	return (k);
 }
 
-static int	expand_without_space(char **new_argv, char *arg, int k)
+static int	new_without_space(char **new_argv, char *arg, int k)
 {
 	new_argv[k] = malloc(ft_strlen(arg) + 1);
 	if (!new_argv[k])
@@ -69,7 +69,7 @@ static int	expand_without_space(char **new_argv, char *arg, int k)
 	return (++k);
 }
 
-char	**expand_args(int *argc, char **argv)
+char	**new_args(int *argc, char **argv)
 {
 	char	**new_argv;
 	int		new_count;
@@ -85,9 +85,9 @@ char	**expand_args(int *argc, char **argv)
 	while (i < *argc)
 	{
 		if (contains_space(argv[i]))
-			k = expand_with_space(new_argv, argv[i], k);
+			k = new_with_space(new_argv, argv[i], k);
 		else
-			k = expand_without_space(new_argv, argv[i], k);
+			k = new_without_space(new_argv, argv[i], k);
 		i++;
 	}
 	new_argv[k] = NULL;
