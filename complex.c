@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:54:42 by gcabecas          #+#    #+#             */
-/*   Updated: 2026/01/03 15:08:38 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2026/01/05 09:58:15 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,23 +69,9 @@ static void	radix_sort(t_pushswap *ps)
 
 void	complex_solver(t_pushswap *ps)
 {
-	int	size;
-
-	size = stack_size(&ps->stack_a);
-	if (size == 2 && ps->stack_a.head->nbr > ps->stack_a.head->nxt->nbr)
-	{
-		sa(ps);
+	if (quick_sort(ps))
 		return ;
-	}
-	if (size == 3)
-	{
-		sort_low(ps);
+	if (assign_index(ps) < 0)
 		return ;
-	}
-	else
-	{
-		if (assign_index(ps) < 0)
-			return ;
-		radix_sort(ps);
-	}
+	radix_sort(ps);
 }
