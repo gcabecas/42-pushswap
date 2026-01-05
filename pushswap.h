@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:47:43 by gcabecas          #+#    #+#             */
-/*   Updated: 2026/01/05 09:57:28 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2026/01/05 12:05:24 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,5 @@ int		count_words(char *str);
 char	*extract_word(char *str, int *index);
 char	**ft_split(char *str);
 int		contains_space(char *str);
-void	sort_low(t_pushswap *ps);
-int		quick_sort(t_pushswap *ps);
 
 #endif
