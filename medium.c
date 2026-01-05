@@ -6,7 +6,7 @@
 /*   By: gcabecas <gcabecas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:15:34 by ndi-tull          #+#    #+#             */
-/*   Updated: 2026/01/05 09:58:42 by gcabecas         ###   ########lyon.fr   */
+/*   Updated: 2026/01/05 12:03:33 by gcabecas         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,6 @@ void	medium_solver(t_pushswap *ps)
 	int	size;
 
 	size = stack_size(&ps->stack_a);
-	if (quick_sort(ps))
-		return ;
 	process_chunks(ps, find_min(&ps->stack_a), find_max(&ps->stack_a), size);
 	while (ps->stack_b.head)
 		push_back_max(ps);
